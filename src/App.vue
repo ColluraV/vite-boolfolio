@@ -7,7 +7,7 @@ export default{
   data(){
     return{
       projects:[],
-      pagination:{}
+      pagination:{},
     };
   },
   methods:{
@@ -15,9 +15,18 @@ export default{
     dataCaller(){
       axios.get("http://127.0.0.1:8000/api/projects")
       .then((response)=>{
-          
+      
+        //per importare tutto la stringa è this.projects=response.data
+        //ma le divideremo per comodità di utilizzo
+
         console.log(response);
         this.projects=response.data.data;
+
+        delete response.data.data;
+
+        this.pagination=response.data;
+        console.log(this.pagination);
+
 
        })
     }
@@ -33,6 +42,7 @@ export default{
 <template>
 
   <h1>dfsds</h1>
+  
 
 </template>
 
