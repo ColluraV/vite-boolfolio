@@ -24,7 +24,7 @@ const router=createRouter({
     //gestione dell'url al cambio pagina
     history: createWebHistory(),
     //restituiamo l'array delle rotte creato
-    routes
+    routes,
 });
 
 export {router};
