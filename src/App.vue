@@ -29,6 +29,7 @@ export default {
 </template>
 
 <style scoped>
+@import "./style.css";
 /*.logo {
   height: 6em;
   padding: 1.5em;
