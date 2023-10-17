@@ -15,7 +15,7 @@ const routes = [
     },
 
     {//rotta allo show
-        path: "/project/:id",
+        path: "/project/:slug",
         name: "project.show",
         component: Show,
     },

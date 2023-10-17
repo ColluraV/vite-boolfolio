@@ -1,4 +1,6 @@
 <script>
+import { RouterLink, stringifyQuery } from 'vue-router';
+
 export default {
     props: {
         title: String,
@@ -7,7 +9,9 @@ export default {
         techs: Array,
         image: Text,
         link: Text,
-    }
+        slug: String,
+    },
+    components: { RouterLink }
 };
 
 
@@ -30,6 +34,11 @@ export default {
             <a :href="link" class="card-link">{{ link }}</a>
         </div>
     </div>
+                
+    <router-link :to="{ name: 'project.show', params: {slug} }">
+                    Mostra Dettagli
+                </router-link>
+
 </template>
 
 

@@ -38,8 +38,6 @@ export default {
     },
     components: {
         Card,
-
-
     }
 }
 
@@ -51,8 +49,16 @@ export default {
     <div class="container">
 
         <div v-for="(card, i) in this.projects" :key="`card_${i}`">
-            <Card :image="getImageUrl(card)" :title="card.title" :description="card.description" :type="card.type"
-                :techs="card.tecnologies" :link="card.url_link" />
+            
+
+                <Card :image="getImageUrl(card)" 
+                :title="card.title" 
+                :description="card.description" 
+                :type="card.type"
+                :techs="card.tecnologies"
+                :link="card.url_link"
+                :slug="card.slug" />
+
         </div>
 
 
@@ -61,7 +67,10 @@ export default {
 
     <div class="d-flex justify-content-center">
 
-        <a v-for="link in this.pagination.links" class="btn btn-link" @click="dataCaller(link.url)" v-html="link.label"
+        <a v-for="link in this.pagination.links" 
+            class="btn btn-link" 
+            @click="dataCaller(link.url)" 
+            v-html="link.label"
             :class="{ 'active': link.label == pagination.current_page }">
         </a>
 
